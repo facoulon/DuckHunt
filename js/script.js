@@ -8,19 +8,23 @@ duck.style.top = "17px";
 duck.style.left= "22px"
 var posTop = "";
 var posLeft = "";
+var newPosTop = "0";
+var newPosLeft = "0";
+
 
 console.log(duck.style.top);
 console.log(duck.style.left);
 
 
 function move() {
+
   posTop = (Math.random()*100)+ "px";
-  console.log(posTop);
   posLeft = (Math.random()*100)+ "px";
-  console.log(posLeft);
-  duck.style.top = posTop;
-  duck.style.left = posLeft
-}
+  duck.style.top = posTop + newPosTop ;
+  console.log(posTop);
+  duck.style.left = posLeft + newPosLeft;
+  newPosTop = posTop;
+  newPosLeft = posLeft;
+} 
 
-
-var myVar = setInterval(move,500);
+var myVar = setInterval(move,3000);
